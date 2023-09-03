@@ -9,14 +9,14 @@ public class Article {
     private String title;
     private Author author;
     private String content;
-    private LocalDate localDate;
+    private LocalDate dateOfPublication;
 
     public Article(String title, Author author, String content) {
         if (titleValidation(title) && authorValidation(author)) {
             this.title = title;
             this.author = author;
             this.content = content;
-            localDate = LocalDate.now();
+            dateOfPublication = LocalDate.now();
             author.getPublishedArticles().add(this);
         }
     }
@@ -65,12 +65,12 @@ public class Article {
         this.content = content;
     }
 
-    public LocalDate getLocalDate() {
-        return localDate;
+    public LocalDate getDateOfPublication() {
+        return dateOfPublication;
     }
 
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
+    public void setDateOfPublication(LocalDate dateOfPublication) {
+        this.dateOfPublication = dateOfPublication;
     }
 
     @Override
