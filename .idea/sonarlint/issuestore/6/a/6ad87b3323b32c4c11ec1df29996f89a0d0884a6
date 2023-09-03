@@ -1,0 +1,7 @@
+
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Õ‡Ø8ÃÀÅ×¥1
+j	java:S116"ORename this field "NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯îŞ8ÉÀÅ×¥1
+V
+java:S5993"9Change the visibility of this constructor to "protected".(©Õ‡Ø8ÌÀÅ×¥1
+D
+java:S1068"(Remove this unused "NAME" private field.(¯îŞ8ØÀÅ×¥1
