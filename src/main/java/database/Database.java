@@ -16,14 +16,18 @@ public class Database {
     }
 
     public Author searchAuthorByName(String name) {
+        Author author = null;
         for (Author registeredAuthor : registeredAuthors) {
             if (registeredAuthor.getName().equals(name)) {
-                return registeredAuthor;
-            } else {
-                System.out.println("There is no such author registered with this name!");
+                author = registeredAuthor;
+                break;
             }
         }
-        return null;
+        if (author == null) {
+            System.out.println("There is no such author registered with this name!");
+        }
+
+        return author;
     }
 
     public void registerAuthor(String name) {

@@ -1,0 +1,16 @@
+
+t	java:S116"SRename this field "DATABASE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ó‹¢ıÿÿÿÿ8¬Á‘å¥1
+G	java:S106,"+Replace this use of System.out by a logger.(®›ÇÚ8ÎÁ‘å¥1
+L	java:S1063"+Replace this use of System.out by a logger.(œÚÑ—ıÿÿÿÿ8ÎÁ‘å¥1
+L	java:S1069"+Replace this use of System.out by a logger.(–¦±ùÿÿÿÿ8ÖÁ‘å¥1
+G	java:S106?"+Replace this use of System.out by a logger.(÷®¼†8ÖÁ‘å¥1
+L	java:S106B"+Replace this use of System.out by a logger.(€¿—úÿÿÿÿ8ÖÁ‘å¥1
+L	java:S106D"+Replace this use of System.out by a logger.(œÚÑ—ıÿÿÿÿ8ÖÁ‘å¥1
+L	java:S106M"+Replace this use of System.out by a logger.(Ù«ôÊøÿÿÿÿ8áÁ‘å¥1
+G	java:S106O"+Replace this use of System.out by a logger.(ö°ÿ°8áÁ‘å¥1
+L	java:S106T"+Replace this use of System.out by a logger.(ÊÄøÿÿÿÿ8áÁ‘å¥1
+G	java:S106Z"+Replace this use of System.out by a logger.(ª²¶½8áÁ‘å¥1
+L	java:S106a"+Replace this use of System.out by a logger.(ó²îôüÿÿÿÿ8éÁ‘å¥1
+G	java:S106p"+Replace this use of System.out by a logger.(ïíşÑ8éÁ‘å¥1
+G	java:S106u"+Replace this use of System.out by a logger.(íÉõì8ñÁ‘å¥1
+G	java:S106"+Replace this use of System.out by a logger.(ĞØ„8ñÁ‘å¥1

@@ -1,0 +1,11 @@
+
+G	java:S106"+Replace this use of System.out by a logger.(Ï’†8½˜å¥1
+G	java:S106+"+Replace this use of System.out by a logger.(ÀäÊœ8Í˜å¥1
+H
+java:S1168-"+Return an empty collection instead of null.(¥¹ï8İ˜å¥1
+H
+java:S1168:"+Return an empty collection instead of null.(¥¹ï8é˜å¥1
+L	java:S106E"+Replace this use of System.out by a logger.(„ş¤µÿÿÿÿÿ8ù˜å¥1
+H
+java:S1168G"+Return an empty collection instead of null.(¥¹ï8ù˜å¥1
+L	java:S106S"+Replace this use of System.out by a logger.(¦ƒí¡ÿÿÿÿÿ8™å¥1

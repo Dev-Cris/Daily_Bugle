@@ -7,3 +7,27 @@ M
 src/main/java/users/User.java,6\a\6ad87b3323b32c4c11ec1df29996f89a0d0884a6
 R
 "src/main/java/article/Article.java,3\d\3dd10f9cbcd7b81e767cb9c89a9329a9b67543a9
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+w
+G.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,b\4\b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3
+Å
+Q.idea/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,1\0\10a03f31c4dce92cb371e761ce9429428bb6c176
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+Å
+Q.idea/sonarlint/securityhotspotstore/e/d/ed21bb38ece404e20145e9bb27eec0e664688a02,c\7\c79b79c3ea9140d4f9441d5fff8cdbb14de3e9be
+Å
+Q.idea/sonarlint/securityhotspotstore/6/a/6ad87b3323b32c4c11ec1df29996f89a0d0884a6,a\6\a6099a49a0878a3574ad22c4b8fa983e1369a177
+Å
+Q.idea/sonarlint/securityhotspotstore/3/d/3dd10f9cbcd7b81e767cb9c89a9329a9b67543a9,c\9\c92162827abed9268d2e9c0da169ed10a6f7d449
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+W
+'src/main/java/dailybugle/Functions.java,d\1\d1d26cd3d6994ca32db15f0c8f6af0765f75bf62
+T
+$src/main/java/dailybugle/Engine.java,9\7\97db0ee433423d0d1f2389254cc789f81cc79684
+T
+$src/main/java/database/Database.java,a\3\a33a569ddb0157d81a43aee2418ce2dc68945d39
+O
+src/main/java/users/Author.java,e\2\e2cbc5e897e220af86249985c054d0a00cfbdb85
