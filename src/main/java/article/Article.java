@@ -9,21 +9,21 @@ public class Article {
     private String title;
     private Author author;
     private String content;
-    private LocalDate dateOfPublication;
+    private LocalDate localDate;
 
     public Article(String title, Author author, String content) {
-        if (titleValidation(title) && authorValidation(author)) {
+        if (titleValidation(title) && authorValidation(author)){
             this.title = title;
             this.author = author;
             this.content = content;
-            dateOfPublication = LocalDate.now();
+            localDate = LocalDate.now();
             author.getPublishedArticles().add(this);
         }
     }
 
     private boolean titleValidation(String title) {
         boolean result = false;
-        if (!title.isEmpty() && !title.isBlank()) {
+        if (!title.isEmpty() && !title.isBlank()){
             result = true;
         } else {
             System.out.println("The title cannot be empty");
@@ -65,16 +65,16 @@ public class Article {
         this.content = content;
     }
 
-    public LocalDate getDateOfPublication() {
-        return dateOfPublication;
+    public LocalDate getLocalDate() {
+        return localDate;
     }
 
-    public void setDateOfPublication(LocalDate dateOfPublication) {
-        this.dateOfPublication = dateOfPublication;
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
     }
 
     @Override
     public String toString() {
-        return title + "\n" + "\n" + content;
+        return title + "\n" + "\n" +content;
     }
 }

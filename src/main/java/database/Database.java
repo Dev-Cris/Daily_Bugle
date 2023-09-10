@@ -10,12 +10,15 @@ import java.util.Set;
 
 public class Database {
     private Set<Author> registeredAuthors;
+    private List<Article> publishedArticles;
 
     public Database() {
         this.registeredAuthors = new HashSet<>();
+        this.publishedArticles = new ArrayList<>();
     }
 
     public Author searchAuthorByName(String name) {
+
         Author author = null;
         for (Author registeredAuthor : registeredAuthors) {
             if (registeredAuthor.getName().equals(name)) {
@@ -75,24 +78,21 @@ public class Database {
         return null;
     }
 
-    public List<String> searchArticles(String title) {
-        List<String> allTitles = getAllArticles();
-        List<String> result = new ArrayList<>();
-        for (String currentTitle : allTitles) {
-            if (currentTitle.contains(title)) {
-                result.add(currentTitle);
+    public List<Article> searchArticles (String title){
+        List<Article> result = new ArrayList<>();
+        for (Article currentArticle : getPublishedArticles()) {
+            if (currentArticle.getTitle().contains(title)){
+                result.add(currentArticle);
             }
         }
-        if (result.isEmpty()) {
-            System.out.println("No result!");
-        }
+
         return result;
     }
 
     public Article searchArticleByTitle(String title) {
         for (Author registeredAuthor : registeredAuthors) {
             for (Article publishedArticle : registeredAuthor.getPublishedArticles()) {
-                if (title.equals(publishedArticle.getTitle())) {
+                if (title.equals(publishedArticle.getTitle())){
                     return publishedArticle;
                 }
             }
@@ -102,5 +102,9 @@ public class Database {
 
     public Set<Author> getRegisteredAuthors() {
         return registeredAuthors;
+    }
+
+    public List<Article> getPublishedArticles() {
+        return publishedArticles;
     }
 }
