@@ -1,37 +1,36 @@
 
 ¬
-java:S1192"Define a constant instead of duplicating this literal "Please enter a valid number corresponding to the options you see on the screen" 4 times.(®äÉ98ëãúÚ¦1
-t	java:S116"SRename this field "DATABASE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ó‹¢ıÿÿÿÿ8‹åúÚ¦1
-F	java:S106"+Replace this use of System.out by a logger.(®äÉ98åúÚ¦1
-G	java:S1065"+Replace this use of System.out by a logger.(®›ÇÚ8‘åúÚ¦1
-G	java:S106<"+Replace this use of System.out by a logger.(ÂÉ™Ä8’åúÚ¦1
-G	java:S106="+Replace this use of System.out by a logger.(¾¶±â8’åúÚ¦1
-G	java:S106>"+Replace this use of System.out by a logger.(ñÜş’8’åúÚ¦1
-F	java:S106D"+Replace this use of System.out by a logger.(®äÉ98’åúÚ¦1
-L	java:S106I"+Replace this use of System.out by a logger.(œÚÑ—ıÿÿÿÿ8’åúÚ¦1
-L	java:S106M"+Replace this use of System.out by a logger.(·†‡îüÿÿÿÿ8“åúÚ¦1
-L	java:S106O"+Replace this use of System.out by a logger.(–¦±ùÿÿÿÿ8“åúÚ¦1
-L	java:S106U"+Replace this use of System.out by a logger.(‡èßËüÿÿÿÿ8“åúÚ¦1
-G	java:S106\"+Replace this use of System.out by a logger.(ÂÉ™Ä8”åúÚ¦1
-G	java:S106]"+Replace this use of System.out by a logger.(¾¶±â8”åúÚ¦1
-G	java:S106^"+Replace this use of System.out by a logger.(ñÜş’8”åúÚ¦1
-F	java:S106d"+Replace this use of System.out by a logger.(®äÉ98”åúÚ¦1
-G	java:S106i"+Replace this use of System.out by a logger.(‡ƒàÕ8”åúÚ¦1
-G	java:S106q"+Replace this use of System.out by a logger.(÷®¼†8•åúÚ¦1
-L	java:S106s"+Replace this use of System.out by a logger.(€¿—úÿÿÿÿ8•åúÚ¦1
-F	java:S106v"+Replace this use of System.out by a logger.(»÷È'8–åúÚ¦1
-L	java:S106|"+Replace this use of System.out by a logger.(‡èßËüÿÿÿÿ8–åúÚ¦1
-M	java:S106„"+Replace this use of System.out by a logger.(Ù«ôÊøÿÿÿÿ8—åúÚ¦1
-M	java:S106ˆ"+Replace this use of System.out by a logger.(Ÿ£­«úÿÿÿÿ8—åúÚ¦1
-G	java:S106”"+Replace this use of System.out by a logger.(®äÉ98˜åúÚ¦1
-H	java:S106š"+Replace this use of System.out by a logger.(Øö³®8˜åúÚ¦1
-M	java:S106›"+Replace this use of System.out by a logger.(¢›Ú‚ÿÿÿÿÿ8˜åúÚ¦1
-H	java:S106"+Replace this use of System.out by a logger.(¾¥”ù8™åúÚ¦1
-M	java:S106¤"+Replace this use of System.out by a logger.(ÊÄøÿÿÿÿ8™åúÚ¦1
-H	java:S106«"+Replace this use of System.out by a logger.(ª²¶½8šåúÚ¦1
-M	java:S106¯"+Replace this use of System.out by a logger.(¦ƒí¡ÿÿÿÿÿ8šåúÚ¦1
-H	java:S106¶"+Replace this use of System.out by a logger.(–¤‹¦8›åúÚ¦1
-M	java:S106¸"+Replace this use of System.out by a logger.(ÂÂ³†şÿÿÿÿ8›åúÚ¦1
-H	java:S106¿"+Replace this use of System.out by a logger.(âÅµá8œåúÚ¦1
-H	java:S106Î"+Replace this use of System.out by a logger.(ïíşÑ8œåúÚ¦1
-H	java:S106Ó"+Replace this use of System.out by a logger.(íÉõì8åúÚ¦1
+java:S1192="Define a constant instead of duplicating this literal "Please enter a valid number corresponding to the options you see on the screen" 3 times.(®äÉ98É·¬ù§1
+t	java:S116"SRename this field "DATABASE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ó‹¢ıÿÿÿÿ8ù·¬ù§1
+G	java:S106."+Replace this use of System.out by a logger.(®›ÇÚ8ş·¬ù§1
+G	java:S1065"+Replace this use of System.out by a logger.(ÂÉ™Ä8ÿ·¬ù§1
+G	java:S1066"+Replace this use of System.out by a logger.(¾¶±â8ÿ·¬ù§1
+G	java:S1067"+Replace this use of System.out by a logger.(ñÜş’8ÿ·¬ù§1
+F	java:S106="+Replace this use of System.out by a logger.(®äÉ98€¸¬ù§1
+L	java:S106B"+Replace this use of System.out by a logger.(œÚÑ—ıÿÿÿÿ8€¸¬ù§1
+L	java:S106F"+Replace this use of System.out by a logger.(·†‡îüÿÿÿÿ8¸¬ù§1
+L	java:S106H"+Replace this use of System.out by a logger.(–¦±ùÿÿÿÿ8¸¬ù§1
+L	java:S106N"+Replace this use of System.out by a logger.(‡èßËüÿÿÿÿ8¸¬ù§1
+G	java:S106U"+Replace this use of System.out by a logger.(ÂÉ™Ä8ƒ¸¬ù§1
+G	java:S106V"+Replace this use of System.out by a logger.(¾¶±â8ƒ¸¬ù§1
+G	java:S106W"+Replace this use of System.out by a logger.(ñÜş’8ƒ¸¬ù§1
+F	java:S106]"+Replace this use of System.out by a logger.(®äÉ98„¸¬ù§1
+G	java:S106b"+Replace this use of System.out by a logger.(‡ƒàÕ8„¸¬ù§1
+G	java:S106j"+Replace this use of System.out by a logger.(÷®¼†8„¸¬ù§1
+L	java:S106l"+Replace this use of System.out by a logger.(€¿—úÿÿÿÿ8…¸¬ù§1
+F	java:S106o"+Replace this use of System.out by a logger.(»÷È'8…¸¬ù§1
+L	java:S106u"+Replace this use of System.out by a logger.(‡èßËüÿÿÿÿ8†¸¬ù§1
+L	java:S106}"+Replace this use of System.out by a logger.(Ù«ôÊøÿÿÿÿ8‡¸¬ù§1
+M	java:S106€"+Replace this use of System.out by a logger.(Ÿ£­«úÿÿÿÿ8‡¸¬ù§1
+G	java:S106Œ"+Replace this use of System.out by a logger.(®äÉ98ˆ¸¬ù§1
+H	java:S106’"+Replace this use of System.out by a logger.(Øö³®8ˆ¸¬ù§1
+M	java:S106“"+Replace this use of System.out by a logger.(¢›Ú‚ÿÿÿÿÿ8‰¸¬ù§1
+H	java:S106•"+Replace this use of System.out by a logger.(¾¥”ù8‰¸¬ù§1
+M	java:S106œ"+Replace this use of System.out by a logger.(ÊÄøÿÿÿÿ8‰¸¬ù§1
+H	java:S106£"+Replace this use of System.out by a logger.(ª²¶½8‹¸¬ù§1
+M	java:S106§"+Replace this use of System.out by a logger.(¦ƒí¡ÿÿÿÿÿ8‹¸¬ù§1
+H	java:S106®"+Replace this use of System.out by a logger.(–¤‹¦8Œ¸¬ù§1
+M	java:S106°"+Replace this use of System.out by a logger.(ÂÂ³†şÿÿÿÿ8Œ¸¬ù§1
+H	java:S106·"+Replace this use of System.out by a logger.(âÅµá8¸¬ù§1
+H	java:S106Æ"+Replace this use of System.out by a logger.(ïíşÑ8¸¬ù§1
+H	java:S106Ë"+Replace this use of System.out by a logger.(íÉõì8¸¬ù§1

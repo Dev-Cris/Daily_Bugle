@@ -23,22 +23,14 @@ public class Engine implements Functions {
 
         while (run) {
             printMenu();
-            int command = 0;
-            try {
-                command = scanner.nextInt();
-                scanner.nextLine();
-            } catch (InputMismatchException e) {
-                System.out.println("Please enter a valid number corresponding to the options you see on the screen");
-                run();
-            }
-
-
+            int command = scanner.nextInt();
+            scanner.nextLine();
             switch (command) {
                 case 1:
                     authorRegistration();
                     break;
                 case 2:
-                    articlePublishing();
+                    runPublishingOrArchiving();
                     break;
                 case 3:
                     searchingArticle();
@@ -47,6 +39,10 @@ public class Engine implements Functions {
                     allPublishedArticles();
                     break;
                 case 5:
+                    allArchivedArticle();
+                    break;
+
+                case 6:
                     run = false;
                     break;
                 default:
@@ -60,14 +56,8 @@ public class Engine implements Functions {
         System.out.println("\nChoose want you want to do");
         System.out.println("1. Continue");
         System.out.println("2. Go back to main menu");
-        int input = 0;
-        try {
-            input = scanner.nextInt();
-            scanner.nextLine();
-        }  catch (InputMismatchException e) {
-            System.out.println("Please enter a valid number corresponding to the options you see on the screen");
-            run();
-        }
+        int input = scanner.nextInt();
+        scanner.nextLine();
 
         if (input == 1) {
             System.out.println("Enter the author's name");
@@ -80,49 +70,75 @@ public class Engine implements Functions {
                 authorRegistration();
             }
         } else if (input == 2) {
-            run();
+            return;
         } else {
             System.out.println("There is no such menu point");
             authorRegistration();
         }
     }
 
-    private void articlePublishing() {
+    public void createArticle(Author author) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the article's title");
+        String title = scanner.nextLine();
+        if (titleValidation(title)) {
+            System.out.println("Enter the article's content");
+            String content = scanner.nextLine();
+            if (contentValidation(content)) {
+                getDATABASE().getPublishedArticles().add(new Article(title, author, content));
+                System.out.println("Article published successfully!");
+            }
+        } else {
+            createArticle(author);
+        }
+    }
+
+    private boolean titleValidation(String title) {
+        boolean result = false;
+        if (!title.isEmpty() && !title.isBlank()) {
+            result = true;
+        } else {
+            System.out.println("The title cannot be empty");
+        }
+        return result;
+    }
+
+    private boolean contentValidation(String content) {
+        int titleLengthWithoutBlankSpace = content.replace(" ", "").length();
+        boolean result = false;
+        if (titleLengthWithoutBlankSpace <= 1000) {
+            result = true;
+        } else {
+            System.out.println("The content is too long");
+        }
+        return result;
+    }
+
+    private void runPublishingOrArchiving() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nChoose want you want to do");
-        System.out.println("1. Continue");
-        System.out.println("2. Go back to main menu");
-        int input = 0;
-        try {
-            input = scanner.nextInt();
-            scanner.nextLine();
-        }  catch (InputMismatchException e) {
-            System.out.println("Please enter a valid number corresponding to the options you see on the screen");
-            run();
-        }
+        System.out.println("1. Continue to publish article");
+        System.out.println("2. Continue to archive article");
+        System.out.println("3. Go back to main menu");
+        int input = scanner.nextInt();
+        scanner.nextLine();
 
         if (input == 1) {
             System.out.println("Enter a registered author's name");
             String authorName = scanner.nextLine();
             Author author = getDATABASE().searchAuthorByName(authorName);
 
-            if (author == null) {
-                articlePublishing();
+            if (author != null) {
+                createArticle(author);
             }
 
-            System.out.println("Enter the article's title");
-            String title = scanner.nextLine();
-            System.out.println("Enter the article's content");
-            String content = scanner.nextLine();
-            getDATABASE().getPublishedArticles().add(new Article(title, author, content));
-            System.out.println("Article published successfully");
-            run();
-
         } else if (input == 2) {
-            run();
+            allArchivableArticles();
+        } else if (input == 3) {
+            return;
         } else {
             System.out.println("There is no such menu point");
-            articlePublishing();
+            runPublishingOrArchiving();
         }
     }
 
@@ -130,15 +146,36 @@ public class Engine implements Functions {
         List<Article> articles = getDATABASE().getPublishedArticles();
         if (articles.isEmpty()) {
             System.out.println("There are no published articles yet");
-            run();
         } else {
             printTitleOfArticles(articles);
             System.out.println("Enter the number of the article you want to read or 0 to go back to the main menu.");
-            printChosenContent(articles);
+            printChosenArticle(articles);
         }
     }
 
-    private void printChosenContent(List<Article> articles) {
+    private void allArchivedArticle() {
+        List<Article> archivedArticles = getDATABASE().getArchivedArticles();
+        if (archivedArticles.isEmpty()) {
+            System.out.println("There are no archived articles yet");
+        } else {
+            printTitleOfArticles(archivedArticles);
+            System.out.println("Enter the number of the article you want to read or 0 to go back to the main menu.");
+            printChosenArticle(archivedArticles);
+        }
+    }
+
+    private void allArchivableArticles() {
+        List<Article> articles = getDATABASE().getPublishedArticles();
+        if (articles.isEmpty()) {
+            System.out.println("There are no published articles yet");
+        } else {
+            printTitleOfArticles(articles);
+            System.out.println("Enter the number of the article you want to archive or 0 to go back to the main menu.");
+            archiveChosenArticle(articles);
+        }
+    }
+
+    private void archiveChosenArticle(List<Article> articles) {
         Scanner scanner = new Scanner(System.in);
         int input = 0;
         try {
@@ -146,17 +183,38 @@ public class Engine implements Functions {
             scanner.nextLine();
         } catch (InputMismatchException e) {
             System.out.println("Please enter a valid number corresponding to the options you see on the screen");
-            run();
         }
         if (input == 0) {
-            run();
+            return;
+        } else if (input <= articles.size() && input > 0) {
+            getDATABASE().getArchivedArticles().add(articles.get(input - 1));
+            getDATABASE().getPublishedArticles().remove(articles.get(input - 1));
+            System.out.println("Article was archived successfully");
+        } else {
+            System.out.println("There is no article with this number, " +
+                    "please chose one from the presented list, or type 0 to go back to the main menu!");
+            archiveChosenArticle(articles);
+        }
+    }
+
+    private void printChosenArticle(List<Article> articles) {
+        Scanner scanner = new Scanner(System.in);
+        int input = 0;
+        try {
+            input = scanner.nextInt();
+            scanner.nextLine();
+        } catch (InputMismatchException e) {
+            System.out.println("Please enter a valid number corresponding to the options you see on the screen");
+        }
+        if (input == 0) {
+            return;
         } else if (input <= articles.size() && input > 0) {
             System.out.println("The content of the article you have chosen is: ");
             System.out.println(articles.get(input - 1).toString());
         } else {
             System.out.println("There is no article with this number, " +
                     "please chose one from the presented list, or type 0 to go back to the main menu!");
-            printChosenContent(articles);
+            printChosenArticle(articles);
         }
     }
 
@@ -179,21 +237,20 @@ public class Engine implements Functions {
     }
 
     private void printTitleOfArticles(List<Article> articles) {
-        System.out.println("The published article title's are: ");
+        System.out.println("The articles are: ");
         for (int i = 0; i < articles.size(); i++) {
             System.out.println(i + 1 + ". " + articles.get(i).getTitle());
         }
-
     }
-
 
     private void printMenu() {
         System.out.println("\nType the number of the option you want to choose \n" +
                 "1. Register Author \n" +
-                "2. Publish Article \n" +
+                "2. Publish/Archive Article \n" +
                 "3. Search Articles \n" +
                 "4. Show all published Articles \n" +
-                "5. Quit \n");
+                "5. Show all archived Articles \n" +
+                "6. Quit \n");
     }
 
     @Override

@@ -11,10 +11,12 @@ import java.util.Set;
 public class Database {
     private Set<Author> registeredAuthors;
     private List<Article> publishedArticles;
+    private List<Article> archivedArticles;
 
     public Database() {
         this.registeredAuthors = new HashSet<>();
         this.publishedArticles = new ArrayList<>();
+        this.archivedArticles = new ArrayList<>();
     }
 
     public Author searchAuthorByName(String name) {
@@ -106,5 +108,9 @@ public class Database {
 
     public List<Article> getPublishedArticles() {
         return publishedArticles;
+    }
+
+    public List<Article> getArchivedArticles() {
+        return archivedArticles;
     }
 }
