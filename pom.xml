@@ -1,23 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<!--
+  ~ Copyright © Progmasters (QTC Kft.), 2016.
+  ~ All rights reserved. No part or the whole of this Teaching Material (TM) may be reproduced, copied, distributed,
+  ~ publicly performed, disseminated to the public, adapted or transmitted in any form or by any means, including
+  ~ photocopying, recording, or other electronic or mechanical methods, without the prior written permission of QTC Kft.
+  ~ This TM may only be used for the purposes of teaching exclusively by QTC Kft. and studying exclusively by QTC Kft.’s
+  ~ students and for no other purposes by any parties other than QTC Kft.
+  ~ This TM shall be kept confidential and shall not be made public or made available or disclosed to any unauthorized person.
+  ~ Any dispute or claim arising out of the breach of these provisions shall be governed by and construed in accordance with the laws of Hungary.
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dailybugle</groupId>
-    <artifactId>dailybugle</artifactId>
+    <groupId>hu.progmasters</groupId>
+    <artifactId>04-jpa-webshop</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>04-jpa-webshop</name>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.11</maven.compiler.source>
+        <maven.compiler.target>1.11</maven.compiler.target>
     </properties>
+
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.12</version>
+        </dependency>
+        <!--    This is a new dependency, this contains hibernate, our JPA provider/implementation    -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.3.3.Final</version>
+        </dependency>
+        <!--    This dependency is needed as long as we have our configuration in an .xml file, it's a tool
+                to parse this file, and use it in our code-->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
+        <!--    H2 is an in-memory-database, talk about it's purpose -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.194</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.4.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

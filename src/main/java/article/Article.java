@@ -1,80 +1,66 @@
 package article;
 
+import org.hibernate.annotations.CreationTimestamp;
 import users.Author;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "article")
 public class Article {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "title")
     private String title;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
     private Author author;
+    @Column(name = "content", length = 1200)
     private String content;
-    private LocalDate localDate;
+    @Column(name = "creation_date")
+    @CreationTimestamp
+    private LocalDate creationDate;
+    @Column(name = "modification_date")
+    private LocalDate modificationDate;
+    @Column(name = "archived")
+    private boolean archived;
+
+    public Article() {
+    }
 
     public Article(String title, Author author, String content) {
-        if (titleValidation(title) && authorValidation(author)){
-            this.title = title;
-            this.author = author;
-            this.content = content;
-            localDate = LocalDate.now();
-            author.getPublishedArticles().add(this);
-        }
-    }
-
-    private boolean titleValidation(String title) {
-        boolean result = false;
-        if (!title.isEmpty() && !title.isBlank()){
-            result = true;
-        } else {
-            System.out.println("The title cannot be empty");
-        }
-        return result;
-    }
-
-    private boolean authorValidation(Author author) {
-        boolean result = false;
-        if (author != null) {
-            result = true;
-        } else {
-            System.out.println("The author field cannot be empty");
-        }
-        return result;
+        this.title = title;
+        this.author = author;
+        this.content = content;
+        this.creationDate = LocalDate.now();
+        this.archived = false;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setArchived(boolean archived) {
+        this.archived = archived;
     }
 
-    public Author getAuthor() {
-        return author;
+    public void setModificationDate(LocalDate modificationDate) {
+        this.modificationDate = modificationDate;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public Long getId() {
+        return id;
     }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public LocalDate getLocalDate() {
-        return localDate;
-    }
-
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
+    public boolean isArchived() {
+        return archived;
     }
 
     @Override
     public String toString() {
-        return title + "\n" + "\n" +content;
+        return "Title: " + title + "\n" + "Content: " + content;
     }
 }

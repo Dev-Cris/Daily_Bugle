@@ -3,114 +3,115 @@ package database;
 import article.Article;
 import users.Author;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
 public class Database {
-    private Set<Author> registeredAuthors;
-    private List<Article> publishedArticles;
-    private List<Article> archivedArticles;
+    private EntityManagerFactory entityManagerFactory;
 
-    public Database() {
-        this.registeredAuthors = new HashSet<>();
-        this.publishedArticles = new ArrayList<>();
-        this.archivedArticles = new ArrayList<>();
+    public Database(EntityManagerFactory entityManagerFactory) {
+
+        this.entityManagerFactory = entityManagerFactory;
     }
 
-    public Author searchAuthorByName(String name) {
+    public void registerAuthor(Author author) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
 
-        Author author = null;
-        for (Author registeredAuthor : registeredAuthors) {
-            if (registeredAuthor.getName().equals(name)) {
-                author = registeredAuthor;
-                break;
-            }
-        }
-        if (author == null) {
-            System.out.println("There is no such author registered with this name!");
-        }
+        transaction.begin();
+        entityManager.persist(author);
+        System.out.println("Author registered successfully");
+
+        transaction.commit();
+        entityManager.close();
+    }
+
+    public void registerArticle(Article article) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+
+        transaction.begin();
+        entityManager.persist(article);
+        transaction.commit();
+
+        entityManager.close();
+    }
+
+    public Author findAuthorByName(String name) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+
+        Author author = entityManager
+                .createQuery("select a from Author a where name like '" + name + "'", Author.class)
+                .getSingleResult();
+
+        transaction.commit();
+        entityManager.close();
 
         return author;
     }
 
-    public void registerAuthor(String name) {
-        Author author = new Author(name);
-        registeredAuthors.add(author);
+    public List<Article> getPublishedArticles() {
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+
+        transaction.begin();
+        List<Article> articles = entityManager
+                .createQuery("select a from Article a where archived = false ", Article.class)
+                .getResultList();
+        transaction.commit();
+
+        entityManager.close();
+        return articles;
     }
 
-    public List<String> getAllArticlesByAuthor(String name) {
-        Author author = searchAuthorByName(name);
-        List<String> result = new ArrayList<>();
-        for (Article publishedArticle : author.getPublishedArticles()) {
-            result.add(publishedArticle.getTitle());
-        }
-        if (!result.isEmpty()) {
-            return result;
-        } else {
-            System.out.println("This author has no published article!");
-        }
-        return null;
+    public List<Article> getArchivedArticles() {
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+
+        transaction.begin();
+        List<Article> articles = entityManager
+                .createQuery("select a from Article a where archived = true ", Article.class)
+                .getResultList();
+        transaction.commit();
+
+        entityManager.close();
+        return articles;
     }
 
-    public List<String> getAllArticles() {
-        List<String> result = new ArrayList<>();
-        for (Author registeredAuthor : registeredAuthors) {
-            for (Article publishedArticle : registeredAuthor.getPublishedArticles()) {
-                result.add(publishedArticle.getTitle());
-            }
-        }
-        if (!result.isEmpty()) {
-            return result;
-        }
-        return null;
+    public void updateArticleStatus(Article article) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+
+        transaction.begin();
+        article.setArchived(true);
+        article.setModificationDate(LocalDate.now());
+        entityManager.merge(article);
+        System.out.println("Article was archived successfully");
+        transaction.commit();
+
+        entityManager.close();
     }
 
-    public List<String> getAllAuthors() {
-        List<String> result = new ArrayList<>();
-        for (Author registeredAuthor : registeredAuthors) {
-            result.add(registeredAuthor.getName());
-        }
-        if (!result.isEmpty()) {
-            return result;
-        } else {
-            System.out.println("There are no registered authors!");
-        }
-        return null;
-    }
+    public List<Article> searchArticles(String input) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
 
-    public List<Article> searchArticles (String title){
-        List<Article> result = new ArrayList<>();
-        for (Article currentArticle : getPublishedArticles()) {
-            if (currentArticle.getTitle().contains(title)){
-                result.add(currentArticle);
-            }
-        }
+        transaction.begin();
+        List<Article> result = entityManager
+                .createQuery("select a from Article a where title like '" + "%" + input + "%" + "'", Article.class)
+                .getResultList();
+        transaction.commit();
+
+        entityManager.close();
 
         return result;
     }
 
-    public Article searchArticleByTitle(String title) {
-        for (Author registeredAuthor : registeredAuthors) {
-            for (Article publishedArticle : registeredAuthor.getPublishedArticles()) {
-                if (title.equals(publishedArticle.getTitle())){
-                    return publishedArticle;
-                }
-            }
-        }
-        return null;
-    }
-
-    public Set<Author> getRegisteredAuthors() {
-        return registeredAuthors;
-    }
-
-    public List<Article> getPublishedArticles() {
-        return publishedArticles;
-    }
-
-    public List<Article> getArchivedArticles() {
-        return archivedArticles;
-    }
 }

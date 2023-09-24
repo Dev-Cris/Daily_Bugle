@@ -4,16 +4,19 @@ import article.Article;
 import database.Database;
 import users.Author;
 
+import javax.persistence.NoResultException;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class Engine implements Functions {
+public class Engine {
     private final Database DATABASE;
 
     public Engine() {
-        this.DATABASE = new Database();
+        this.DATABASE = new Database(Persistence.createEntityManagerFactory("daily_bugle"));
     }
 
     public void run() {
@@ -44,6 +47,8 @@ public class Engine implements Functions {
 
                 case 6:
                     run = false;
+//                    getDATABASE().getEntityManagerFactory().close();
+                    System.exit(1);
                     break;
                 default:
                     System.out.println("Wrong command! Please Enter a new one!");
@@ -63,8 +68,13 @@ public class Engine implements Functions {
             System.out.println("Enter the author's name");
             String authorName = scanner.nextLine();
             if (!authorName.isBlank() && !authorName.isEmpty()) {
-                getDATABASE().registerAuthor(authorName);
-                System.out.println("Author registered successfully");
+                try {
+                    getDATABASE().registerAuthor(new Author(authorName));
+                    System.out.println("Registration is ok.");
+                } catch (PersistenceException exception) {
+                    System.out.println("There is already an author with that name.");
+                }
+
             } else {
                 System.out.println("The name cannot be empty");
                 authorRegistration();
@@ -85,7 +95,7 @@ public class Engine implements Functions {
             System.out.println("Enter the article's content");
             String content = scanner.nextLine();
             if (contentValidation(content)) {
-                getDATABASE().getPublishedArticles().add(new Article(title, author, content));
+                getDATABASE().registerArticle(new Article(title, author, content));
                 System.out.println("Article published successfully!");
             }
         } else {
@@ -124,12 +134,15 @@ public class Engine implements Functions {
         scanner.nextLine();
 
         if (input == 1) {
-            System.out.println("Enter a registered author's name");
+            System.out.println("Enter the author's name");
             String authorName = scanner.nextLine();
-            Author author = getDATABASE().searchAuthorByName(authorName);
-
-            if (author != null) {
+            Author author = null;
+            try {
+                author = getDATABASE().findAuthorByName(authorName);
                 createArticle(author);
+            } catch (NoResultException e) {
+                System.out.println("There is no such author registered with this name!");
+                runPublishingOrArchiving();
             }
 
         } else if (input == 2) {
@@ -168,6 +181,7 @@ public class Engine implements Functions {
         List<Article> articles = getDATABASE().getPublishedArticles();
         if (articles.isEmpty()) {
             System.out.println("There are no published articles yet");
+            runPublishingOrArchiving();
         } else {
             printTitleOfArticles(articles);
             System.out.println("Enter the number of the article you want to archive or 0 to go back to the main menu.");
@@ -187,9 +201,9 @@ public class Engine implements Functions {
         if (input == 0) {
             return;
         } else if (input <= articles.size() && input > 0) {
-            getDATABASE().getArchivedArticles().add(articles.get(input - 1));
-            getDATABASE().getPublishedArticles().remove(articles.get(input - 1));
-            System.out.println("Article was archived successfully");
+
+            getDATABASE().updateArticleStatus(articles.get(input - 1));
+
         } else {
             System.out.println("There is no article with this number, " +
                     "please chose one from the presented list, or type 0 to go back to the main menu!");
@@ -251,31 +265,6 @@ public class Engine implements Functions {
                 "4. Show all published Articles \n" +
                 "5. Show all archived Articles \n" +
                 "6. Quit \n");
-    }
-
-    @Override
-    public void registerAuthor(String name) {
-        getDATABASE().registerAuthor(name);
-    }
-
-    @Override
-    public void listArticles() {
-        System.out.println(getDATABASE().getAllArticles());
-    }
-
-    @Override
-    public void printContent(String title) {
-        System.out.println(getDATABASE().searchArticleByTitle(title));
-    }
-
-    @Override
-    public void publishArticle(String title, String content, String authorName) {
-        new Article(title, getDATABASE().searchAuthorByName(authorName), content);
-    }
-
-    @Override
-    public void search(String input) {
-        printTitleOfArticles(getDATABASE().searchArticles(input));
     }
 
     public Database getDATABASE() {
