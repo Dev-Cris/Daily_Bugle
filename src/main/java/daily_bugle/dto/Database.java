@@ -1,7 +1,7 @@
-package database;
+package daily_bugle.dto;
 
-import article.Article;
-import users.Author;
+import daily_bugle.domain.Article;
+import daily_bugle.domain.Author;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
