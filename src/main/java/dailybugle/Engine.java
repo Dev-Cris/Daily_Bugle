@@ -47,8 +47,7 @@ public class Engine {
 
                 case 6:
                     run = false;
-//                    getDATABASE().getEntityManagerFactory().close();
-                    System.exit(1);
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Wrong command! Please Enter a new one!");
@@ -70,7 +69,6 @@ public class Engine {
             if (!authorName.isBlank() && !authorName.isEmpty()) {
                 try {
                     getDATABASE().registerAuthor(new Author(authorName));
-                    System.out.println("Registration is ok.");
                 } catch (PersistenceException exception) {
                     System.out.println("There is already an author with that name.");
                 }
@@ -96,7 +94,6 @@ public class Engine {
             String content = scanner.nextLine();
             if (contentValidation(content)) {
                 getDATABASE().registerArticle(new Article(title, author, content));
-                System.out.println("Article published successfully!");
             }
         } else {
             createArticle(author);

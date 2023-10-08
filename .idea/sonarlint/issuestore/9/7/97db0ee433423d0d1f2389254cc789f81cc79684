@@ -1,54 +1,51 @@
 
 D
-java:S2189""Add an end condition to this loop.(ÑÒŸ¹øÿÿÿÿ8ı¿·Ä¬1
+java:S2189""Add an end condition to this loop.(ÑÒŸ¹øÿÿÿÿ8«Ô’Ú­1
 Y
-java:S2589"7Remove this expression which always evaluates to "true"(ÑÒŸ¹øÿÿÿÿ8‚À·Ä¬1
-t	java:S116"SRename this field "DATABASE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ó‹¢ıÿÿÿÿ8…À·Ä¬1
-]	java:S1252"<This block of commented-out lines of code should be removed.(İçŒÆıÿÿÿÿ8—À·Ä¬1
-G	java:S1066"+Replace this use of System.out by a logger.(®›ÇÚ8šÀ·Ä¬1
+java:S2589"7Remove this expression which always evaluates to "true"(ÑÒŸ¹øÿÿÿÿ8«Ô’Ú­1
+t	java:S116"SRename this field "DATABASE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ó‹¢ıÿÿÿÿ8¹ıéÄ¬1
+G	java:S1065"+Replace this use of System.out by a logger.(®›ÇÚ8ÅıéÄ¬1
 8
-java:S3626S"Remove this redundant jump.(ûÁİ…8À·Ä¬1
-G	java:S106="+Replace this use of System.out by a logger.(ÂÉ™Ä8¢À·Ä¬1
-G	java:S106>"+Replace this use of System.out by a logger.(¾¶±â8£À·Ä¬1
-G	java:S106?"+Replace this use of System.out by a logger.(ñÜş’8¥À·Ä¬1
-L	java:S106D"+Replace this use of System.out by a logger.(œÚÑ—ıÿÿÿÿ8¨À·Ä¬1
-G	java:S106I"+Replace this use of System.out by a logger.(Œøä®8«À·Ä¬1
-G	java:S106K"+Replace this use of System.out by a logger.(ûâŠÛ8¬À·Ä¬1
-L	java:S106O"+Replace this use of System.out by a logger.(–¦±ùÿÿÿÿ8®À·Ä¬1
-L	java:S106U"+Replace this use of System.out by a logger.(‡èßËüÿÿÿÿ8±À·Ä¬1
-G	java:S106\"+Replace this use of System.out by a logger.(÷®¼†8³À·Ä¬1
-L	java:S106_"+Replace this use of System.out by a logger.(€¿—úÿÿÿÿ8³À·Ä¬1
-G	java:S106c"+Replace this use of System.out by a logger.(ÿªò8µÀ·Ä¬1
-G	java:S106o"+Replace this use of System.out by a logger.(»åö±8·À·Ä¬1
-G	java:S106z"+Replace this use of System.out by a logger.(Ñ’èÆ8ºÀ·Ä¬1
+java:S3626Q"Remove this redundant jump.(ûÁİ…8ÄıéÄ¬1
+G	java:S106<"+Replace this use of System.out by a logger.(ÂÉ™Ä8ÅıéÄ¬1
+G	java:S106="+Replace this use of System.out by a logger.(¾¶±â8ÅıéÄ¬1
+G	java:S106>"+Replace this use of System.out by a logger.(ñÜş’8ÆıéÄ¬1
+L	java:S106C"+Replace this use of System.out by a logger.(œÚÑ—ıÿÿÿÿ8ÈıéÄ¬1
+G	java:S106I"+Replace this use of System.out by a logger.(ûâŠÛ8ÉıéÄ¬1
+L	java:S106M"+Replace this use of System.out by a logger.(–¦±ùÿÿÿÿ8ÉıéÄ¬1
+L	java:S106S"+Replace this use of System.out by a logger.(‡èßËüÿÿÿÿ8ËıéÄ¬1
+G	java:S106Z"+Replace this use of System.out by a logger.(÷®¼†8ËıéÄ¬1
+L	java:S106]"+Replace this use of System.out by a logger.(€¿—úÿÿÿÿ8ÎıéÄ¬1
+G	java:S106l"+Replace this use of System.out by a logger.(»åö±8ĞıéÄ¬1
+G	java:S106w"+Replace this use of System.out by a logger.(Ñ’èÆ8ÒıéÄ¬1
 9
-java:S3626—"Remove this redundant jump.(ûÁİ…8¼À·Ä¬1
-H	java:S106"+Replace this use of System.out by a logger.(ÂÉ™Ä8ÀÀ·Ä¬1
-H	java:S106‚"+Replace this use of System.out by a logger.(ñÄÑØ8ÃÀ·Ä¬1
-H	java:S106ƒ"+Replace this use of System.out by a logger.(œÒàø8ÆÀ·Ä¬1
-M	java:S106„"+Replace this use of System.out by a logger.(ËµÌ¼şÿÿÿÿ8ÇÀ·Ä¬1
-M	java:S106‰"+Replace this use of System.out by a logger.(œÚÑ—ıÿÿÿÿ8ÉÀ·Ä¬1
-H	java:S106"+Replace this use of System.out by a logger.(Ï’†8ÌÀ·Ä¬1
-M	java:S106™"+Replace this use of System.out by a logger.(‡èßËüÿÿÿÿ8ÏÀ·Ä¬1
-M	java:S106¡"+Replace this use of System.out by a logger.(Ù«ôÊøÿÿÿÿ8ÒÀ·Ä¬1
-M	java:S106¤"+Replace this use of System.out by a logger.(Ÿ£­«úÿÿÿÿ8ÔÀ·Ä¬1
-H	java:S106¬"+Replace this use of System.out by a logger.(Ô¸¨ş8ÖÀ·Ä¬1
-M	java:S106¯"+Replace this use of System.out by a logger.(Ÿ£­«úÿÿÿÿ8×À·Ä¬1
-M	java:S106·"+Replace this use of System.out by a logger.(Ù«ôÊøÿÿÿÿ8ÚÀ·Ä¬1
-M	java:S106»"+Replace this use of System.out by a logger.(£¶™ıÿÿÿÿ8ÛÀ·Ä¬1
+java:S3626”"Remove this redundant jump.(ûÁİ…8ÑıéÄ¬1
+G	java:S106~"+Replace this use of System.out by a logger.(ÂÉ™Ä8ÒıéÄ¬1
+G	java:S106"+Replace this use of System.out by a logger.(ñÄÑØ8ÒıéÄ¬1
+H	java:S106€"+Replace this use of System.out by a logger.(œÒàø8ÒıéÄ¬1
+M	java:S106"+Replace this use of System.out by a logger.(ËµÌ¼şÿÿÿÿ8ÓıéÄ¬1
+M	java:S106†"+Replace this use of System.out by a logger.(œÚÑ—ıÿÿÿÿ8ÔıéÄ¬1
+H	java:S106"+Replace this use of System.out by a logger.(Ï’†8ÕıéÄ¬1
+M	java:S106–"+Replace this use of System.out by a logger.(‡èßËüÿÿÿÿ8×ıéÄ¬1
+M	java:S106"+Replace this use of System.out by a logger.(Ù«ôÊøÿÿÿÿ8ØıéÄ¬1
+M	java:S106¡"+Replace this use of System.out by a logger.(Ÿ£­«úÿÿÿÿ8ÙıéÄ¬1
+H	java:S106©"+Replace this use of System.out by a logger.(Ô¸¨ş8ÚıéÄ¬1
+M	java:S106¬"+Replace this use of System.out by a logger.(Ÿ£­«úÿÿÿÿ8ÛıéÄ¬1
+M	java:S106´"+Replace this use of System.out by a logger.(Ù«ôÊøÿÿÿÿ8ÜıéÄ¬1
+M	java:S106¸"+Replace this use of System.out by a logger.(£¶™ıÿÿÿÿ8ßıéÄ¬1
 9
-java:S3626Ê"Remove this redundant jump.(ûÁİ…8İÀ·Ä¬1
-G	java:S106Ç"+Replace this use of System.out by a logger.(®äÉ98àÀ·Ä¬1
-H	java:S106Ğ"+Replace this use of System.out by a logger.(¾¥”ù8äÀ·Ä¬1
+java:S3626Ç"Remove this redundant jump.(ûÁİ…8İıéÄ¬1
+G	java:S106Ä"+Replace this use of System.out by a logger.(®äÉ98àıéÄ¬1
+H	java:S106Í"+Replace this use of System.out by a logger.(¾¥”ù8ãıéÄ¬1
 9
-java:S3626à"Remove this redundant jump.(ûÁİ…8çÀ·Ä¬1
-G	java:S106İ"+Replace this use of System.out by a logger.(®äÉ98ëÀ·Ä¬1
-H	java:S106â"+Replace this use of System.out by a logger.(Øö³®8íÀ·Ä¬1
-M	java:S106ã"+Replace this use of System.out by a logger.(¢›Ú‚ÿÿÿÿÿ8ïÀ·Ä¬1
-H	java:S106å"+Replace this use of System.out by a logger.(¾¥”ù8ñÀ·Ä¬1
-M	java:S106ì"+Replace this use of System.out by a logger.(ÊÄøÿÿÿÿ8ôÀ·Ä¬1
-H	java:S106ó"+Replace this use of System.out by a logger.(ª²¶½8÷À·Ä¬1
-M	java:S106÷"+Replace this use of System.out by a logger.(¦ƒí¡ÿÿÿÿÿ8øÀ·Ä¬1
-H	java:S106ş"+Replace this use of System.out by a logger.(äÅÃâ8ûÀ·Ä¬1
-M	java:S106€"+Replace this use of System.out by a logger.(ÂÂ³†şÿÿÿÿ8şÀ·Ä¬1
-H	java:S106…"+Replace this use of System.out by a logger.(âÅµá8€Á·Ä¬1
+java:S3626İ"Remove this redundant jump.(ûÁİ…8áıéÄ¬1
+G	java:S106Ú"+Replace this use of System.out by a logger.(®äÉ98ãıéÄ¬1
+H	java:S106ß"+Replace this use of System.out by a logger.(Øö³®8äıéÄ¬1
+M	java:S106à"+Replace this use of System.out by a logger.(¢›Ú‚ÿÿÿÿÿ8äıéÄ¬1
+H	java:S106â"+Replace this use of System.out by a logger.(¾¥”ù8åıéÄ¬1
+M	java:S106é"+Replace this use of System.out by a logger.(ÊÄøÿÿÿÿ8çıéÄ¬1
+H	java:S106ğ"+Replace this use of System.out by a logger.(ª²¶½8èıéÄ¬1
+M	java:S106ô"+Replace this use of System.out by a logger.(¦ƒí¡ÿÿÿÿÿ8éıéÄ¬1
+H	java:S106û"+Replace this use of System.out by a logger.(äÅÃâ8êıéÄ¬1
+M	java:S106ı"+Replace this use of System.out by a logger.(ÂÂ³†şÿÿÿÿ8ëıéÄ¬1
+H	java:S106‚"+Replace this use of System.out by a logger.(âÅµá8”¸”Ú­1

@@ -23,9 +23,9 @@ public class Database {
 
         transaction.begin();
         entityManager.persist(author);
-        System.out.println("Author registered successfully");
-
         transaction.commit();
+
+        System.out.println("Author registered successfully");
         entityManager.close();
     }
 
@@ -36,6 +36,7 @@ public class Database {
         transaction.begin();
         entityManager.persist(article);
         transaction.commit();
+        System.out.println("Article published successfully!");
 
         entityManager.close();
     }
@@ -93,8 +94,8 @@ public class Database {
         article.setArchived(true);
         article.setModificationDate(LocalDate.now());
         entityManager.merge(article);
-        System.out.println("Article was archived successfully");
         transaction.commit();
+        System.out.println("Article was archived successfully");
 
         entityManager.close();
     }

@@ -2,6 +2,7 @@ package database.test;
 
 import article.Article;
 import database.Database;
+import org.hibernate.internal.ExceptionMapperStandardImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import users.Author;
@@ -9,6 +10,9 @@ import users.Author;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
+import javax.persistence.RollbackException;
+
+import java.rmi.UnexpectedException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -46,6 +50,19 @@ public class DatabaseTest {
         database.registerArticle(article);
         assertNotNull(article.getId());
         assertEquals(1, article.getId());
+    }
+
+    @Test
+    void test_registerArticleWithoutTitle(){
+        article.setTitle("");
+        assertThrows(RollbackException.class, () -> database.registerArticle(article));
+        assertEquals(0, database.getPublishedArticles().size());
+    }
+
+    @Test
+    void test_registerArticleWithoutAuthor(){
+        article.setAuthor(null);
+        assertThrows(NullPointerException.class, () -> database.registerArticle(article));
     }
 
     @Test
