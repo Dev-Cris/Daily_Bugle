@@ -18,7 +18,7 @@ public class Author {
     private Long id;
 
     @Column(name = "author_name", unique = true)
-    private String name;
+    private String authorName;
 
     @Column(name = "published_Articles")
     @OneToMany(mappedBy = "author")
