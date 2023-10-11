@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 public class AuthorInfo {
 
-    private String name;
+    private String authorName;
     private List<ArticleInfo> publishedArticles;
 
 }

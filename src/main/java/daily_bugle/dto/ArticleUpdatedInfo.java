@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ArticleArchivedInfo {
+public class ArticleUpdatedInfo {
 
     private String title;
     private boolean archived;

@@ -3,7 +3,7 @@ package daily_bugle.service;
 import daily_bugle.domain.Author;
 import daily_bugle.dto.AuthorCreateUpdateCommand;
 import daily_bugle.dto.AuthorInfo;
-import daily_bugle.exceptionHandling.AuthorNotFoundExeption;
+import daily_bugle.exceptionHandling.AuthorNotFoundException;
 import daily_bugle.repository.AuthorRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -32,6 +32,6 @@ public class AuthorSerivce {
 
     public Author findAuthorById(Long authorId) {
         Optional<Author> authorOptional = authorRepository.findById(authorId);
-        return  authorOptional.orElseThrow(() -> new AuthorNotFoundExeption(authorId));
+        return  authorOptional.orElseThrow(() -> new AuthorNotFoundException(authorId));
     }
 }

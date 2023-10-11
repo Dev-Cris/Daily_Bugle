@@ -12,12 +12,12 @@ public class GlobalExceptionHandler {
 
 
 
-    @ExceptionHandler(AuthorNotFoundExeption.class)
-    public ResponseEntity<ValidationError> handleAuthorNotFound(AuthorNotFoundExeption exeption){
-        ValidationError validationError = new ValidationError("authorID", "Author not found with id: "
-                + exeption.getAuhtorId());
-        log.error(validationError.getErrorMessage());
-        return new ResponseEntity<>(validationError, HttpStatus.BAD_REQUEST);
-    }
+//    @ExceptionHandler(AuthorNotFoundException.class)
+//    public ResponseEntity<ValidationError> handleAuthorNotFound(AuthorNotFoundException exeption){
+//        ValidationError validationError = new ValidationError("authorID", "Author not found with id: "
+//                + exeption.getAuhtorId());
+//        log.error(validationError.getErrorMessage());
+//        return new ResponseEntity<>(validationError, HttpStatus.BAD_REQUEST);
+//    }
 
 }

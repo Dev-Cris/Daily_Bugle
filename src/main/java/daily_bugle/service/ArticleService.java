@@ -2,7 +2,6 @@ package daily_bugle.service;
 
 import daily_bugle.domain.Article;
 import daily_bugle.domain.Author;
-import daily_bugle.dto.ArticleArchivedInfo;
 import daily_bugle.dto.ArticleCreateCommand;
 import daily_bugle.dto.ArticleInfo;
 import daily_bugle.repository.ArticleRepository;
@@ -38,17 +37,12 @@ public class ArticleService {
         return articleInfo;
     }
 
-    public ArticleArchivedInfo archiveArticle(ArticleCreateCommand command){
-        Article articleToBeArchived = articleRepository;
-        if (command.getTitle().isBlank() && command.getContent().isBlank()) {
-            articleToBeArchived.archive();
-        }
-
-    }
-
-    1.updateTitle
-    2.updateContent
-    3.archive
-
+//    public ArticleArchivedInfo updateArticle(ArticleCreateCommand command){
+//        Article articleToBeArchived = articleRepository;
+//        if (command.getTitle().isBlank() && command.getContent().isBlank()) {
+//            articleToBeArchived.archive();
+//        }
+//
+//    }
 
 }

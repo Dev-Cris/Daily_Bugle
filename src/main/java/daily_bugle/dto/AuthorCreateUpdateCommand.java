@@ -13,5 +13,5 @@ import javax.validation.constraints.NotNull;
 public class AuthorCreateUpdateCommand {
     @NotNull(message = "Must not be null!")
     @NotBlank(message = "Must not be blank!")
-    private String name;
+    private String authorName;
 }
