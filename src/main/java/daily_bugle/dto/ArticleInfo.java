@@ -15,4 +15,5 @@ public class ArticleInfo {
     private String content;
     private LocalDate creationDate;
     private LocalDate modificationDate;
+    private boolean archived;
 }

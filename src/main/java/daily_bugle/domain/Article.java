@@ -8,6 +8,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+
 @Entity
 @Table(name = "article")
 @AllArgsConstructor

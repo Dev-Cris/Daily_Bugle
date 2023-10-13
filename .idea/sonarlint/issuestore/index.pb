@@ -641,8 +641,6 @@ k
 ;src/main/java/daily_bugle/repository/ArticleRepository.java,e\a\eaa1b330f2ce0b8a26ac69e21610595d6aa570f6
 j
 :src/main/java/daily_bugle/repository/AuthorRepository.java,1\f\1ff2e65152684cd0bae6aeca44d96f808e1dc58a
-w
-Gsrc/main/java/daily_bugle/exceptionHandling/AuthorNotFoundExeption.java,9\9\99ac4b77071afad2a813c5aee2ed2c64144181df
 p
 @src/main/java/daily_bugle/exceptionHandling/ValidationError.java,9\7\97b56da6af37d8708c4edbafea05c28bfb23eab7
 w
@@ -1312,8 +1310,6 @@ Q.idea/sonarlint/securityhotspotstore/1/c/1c3c3f885e36bbb0d274d399884f6ce5fe3da9
 Å
 Q.idea/sonarlint/securityhotspotstore/3/e/3e52bcb81aff6f8f92a5e31bbab715ad6049f4be,d\9\d99d6f98014f499afcc53bc9fc9cdc14b74bc3b0
 Å
-Q.idea/sonarlint/securityhotspotstore/9/9/99ac4b77071afad2a813c5aee2ed2c64144181df,4\8\48c8db0a4ac98a91483a1d12ef0ff3c9c8df3661
-Å
 Q.idea/sonarlint/securityhotspotstore/3/8/380bd2d8a6ac9e7e01296647de7bd2efd8b2a65c,4\3\436bf8156d0b19475f6acf32c05377b03ef06ad1
 Å
 Q.idea/sonarlint/securityhotspotstore/3/2/324455ce59f5a20b3e4ffbcd716e4b13cea17dc6,7\6\760df8bbaea464ef092b638b088c37a9c5c6fcd5
@@ -1355,3 +1351,8 @@ g
 7src/main/java/daily_bugle/dto/ArticleUpdateCommand.java,6\c\6c665f44a57647b61a274908f176bb687f0e425d
 e
 5src/main/java/daily_bugle/dto/ArticleUpdatedInfo.java,9\1\91eb7d21cfb99caaa4c7fc4cd3dbf392097148ca
+x
+Hsrc/main/java/daily_bugle/exceptionHandling/AuthorNotFoundException.java,5\c\5cfa798f4166df1eea8592c57579e4ea377ff245
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

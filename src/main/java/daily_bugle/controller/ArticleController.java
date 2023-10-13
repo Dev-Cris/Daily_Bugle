@@ -1,5 +1,6 @@
 package daily_bugle.controller;
 
+import daily_bugle.dto.ArticleArchiveCommand;
 import daily_bugle.dto.ArticleCreateCommand;
 import daily_bugle.dto.ArticleInfo;
 import daily_bugle.service.ArticleService;
@@ -9,8 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/article")
@@ -35,18 +34,26 @@ public class ArticleController {
         }
     }
 
-//    @PutMapping()
-//    public ResponseEntity<ArticleArchivedInfo> archiveArticle(@Valid @RequestBody ArticleUpdateCommand command){
-//
-//    }
 
     private boolean contentValidation(String content){
         boolean result = false;
         if (content.replace(" ", "").length() > 1000) {
             return result;
-        } else if (!content.isBlank() && !content.isEmpty()) {
+        } else {
             result = true;
         }
         return result;
+    }
+
+    @PutMapping()
+    public ResponseEntity<ArticleInfo> archiveArticle(@Valid @RequestBody ArticleArchiveCommand command){
+        if (articleService.checkArticleStatus(command.getArticleId())) {
+            log.error("HTTP request, PUT to api/article: " + command.toString());
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        } else {
+            log.info("HTTP request, PUT to api/article: " + command.toString());
+            ArticleInfo articleInfo = articleService.archiveArticle(command.getArticleId());
+            return new ResponseEntity<>(articleInfo, HttpStatus.OK);
+        }
     }
 }

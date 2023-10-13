@@ -2,12 +2,17 @@ package daily_bugle.service;
 
 import daily_bugle.domain.Article;
 import daily_bugle.domain.Author;
+import daily_bugle.dto.ArticleArchiveCommand;
 import daily_bugle.dto.ArticleCreateCommand;
 import daily_bugle.dto.ArticleInfo;
+import daily_bugle.exceptionHandling.ArticleNotFoundException;
+import daily_bugle.exceptionHandling.AuthorNotFoundException;
 import daily_bugle.repository.ArticleRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -37,12 +42,21 @@ public class ArticleService {
         return articleInfo;
     }
 
-//    public ArticleArchivedInfo updateArticle(ArticleCreateCommand command){
-//        Article articleToBeArchived = articleRepository;
-//        if (command.getTitle().isBlank() && command.getContent().isBlank()) {
-//            articleToBeArchived.archive();
-//        }
-//
-//    }
+    public ArticleInfo archiveArticle(Long articleId) {
+        Article article = findArticleById(articleId);
+        article.setArchived(true);
+        ArticleInfo articleInfo = modelMapper.map(article, ArticleInfo.class);
+        articleInfo.setAuthorName(article.getAuthor().getAuthorName());
+        return articleInfo;
+    }
+
+    public boolean checkArticleStatus(Long articleId){
+        return findArticleById(articleId).isArchived();
+    }
+
+    public Article findArticleById(Long articleId) {
+        Optional<Article> articleOp = articleRepository.findById(articleId);
+        return  articleOp.orElseThrow(() -> new ArticleNotFoundException(articleId));
+    }
 
 }
